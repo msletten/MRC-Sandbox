@@ -1,0 +1,42 @@
+<style type="text/css">
+
+/*Below, change what appears next to "color:" to change the color of the font, and change what appears next to "background-color:" to change the background color of the navigation options.*/
+
+a.blue:link,a.blue:visited
+{
+display:block;
+font-weight:bold;
+color:white;
+font-size:15px;
+background-color:rgb(71,144,205);
+width:100%;
+text-align:left;
+padding-top:12px;
+padding-left: 10px;
+padding-bottom:12px;
+padding-right: 20px;
+text-decoration:none;
+margin-bottom:2px;
+}
+
+/*Below, change what appears next to "background-color:" to change the background color of the navigation options when your mouse is hovering over them.*/
+
+a.blue:hover 
+{
+background-color:rgb(242,102,58);
+
+}
+
+
+
+</style>
+
+<!--Below, delete the message YOUR URL HERE and add the URL of the site you want to link to.  Next to each URL, delete the placeholder titles and add your own.-->
+
+
+<a class="blue"  href="YOUR URL HERE">Conference Photo Montage</a>
+<a class="blue"  href="YOUR URL HERE">Keynote Video</a>
+<a class="blue"  href="YOUR URL HERE">Conference Playlist</a>
+<a class="blue"  href="YOUR URL HERE">Evaluation Surveys</a>
+<a class="blue"  href="YOUR URL HERE">Conference eBook</a>
+

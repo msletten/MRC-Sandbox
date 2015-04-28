@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="master.css">
+</head>
+<body>
+<div class="ribbon">
+ <div id="redwrapper">
+   <p><a href="javascript:void(0)" onclick="toggle_popUp('redPopUp');">Mosaic Maintenance will cause downtime....</a></p>
+  </div>
+<div id="greenwrapper">
+   <p><a href="javascript:void(0)" onclick="toggle_popUp('greenPopUp');">Mosaic Maintenance will cause downtime....</a></p>
+  </div>
+  <div id="yellowwrapper">
+   <p><a href="javascript:void(0)" onclick="toggle_popUp('yellowPopUp');">Mosaic Maintenance will cause downtime....</a></p>
+  </div>
+  </div>
+
+
+  <div id="redPopUp">
+<div class="ribbon">
+<div class="popupwrapper">
+ 
+   <div id="reddialogbox"><p>We are currently experiencing technical difficulties with our "support@mymosaic.com" address after mail migration maintenance. In the interim we please ask that you use your <a href="https://help.mymosaic.com/customer/portal/private/cases" target="_blank">My Tickets</a> portal within the Mosaic Resource Center to create or respond to any communication with your client solutions manager. We hope to have this issue resolved shortly.</p><p>Thanks for your patience!</p><a class="closeDialog" href="javascript:void(0)" onclick="toggle_popUp('redPopUp');"><img src="closeRed.png"></a>
+   </div>
+</div>
+</div>
+</div>
+
+<!-- Green Banner Notification -->
+<!-- <div class="ribbon">
+  <div id="greenwrapper">
+   <p><a href="javascript:void(0)" onclick="toggle_visibility('greenPopUp');">Mosaic Maintenance will cause downtime....</a></p>
+  </div>
+  </div> -->
+  <div id="greenPopUp">
+ <div class="ribbon">
+ <div class="popupwrapper">
+<div id="greendialogbox"><p>From Monday, December 22, through Monday, December 29, 2014, iTunes Connect, Application Loader, and iTunes Connect for iOS will be unavailable.</p><p>During this time, you will not be able to submit new apps, app updates, or In-App Purchases. You also will not be able to access iTunes Connect or make changes to TestFlight Beta Testing. You can schedule an app release or price changes to take place between December 22 and December 29. Just make sure that your changes are scheduled, submitted, and approved by December 18, to ensure your app remains available during this busy period. Users who are currently testing or invited to test your prerelease apps with TestFlight Beta Testing will not be affected.</p><p>If you have any questions, <a href="http://www.apple.com/itunes/go/itunesconnect/contactus" target="_blank">contact iTunes</a>.</p><a href="javascript:void(0)" onclick="toggle_popUp('greenPopUp');"><img src="closeGreen.png"></a>
+   </div>
+</div>
+</div>
+</div>
+
+
+ <div id="yellowPopUp">
+ <div class="ribbon">
+  <div class="popupwrapper">
+  <div id="yellowdialogbox"><p>We will be performing maintenance on Mosaic Thursday December 4th for a period of up to 24 hours through Friday December 5th.</p><p>App and portal performance may be affected for a brief period of time during this scheduled maintenance.</p><a href="javascript:void(0)" onclick="toggle_popUp('yellowPopUp');"><img src="closeYellow.png"></a>
+   </div>
+  </div>
+  </div>
+  </div>
+
+
+<!-- END Banner Notification -->
+
+
+<div id='support-main'>
+  <div class='support-body'>
+    <div class='content articles wrapper'>
+    
+      <div id='toggle'>
+        <h3>Featured Integrations</h3>
+        <div>
+          
+            
+              <a href='/customer/portal/topics/652418-featured-integrations/articles' class='active'>Articles</a>
+            
+          
+          
+        </div>
+      </div>
+      <ul>
+        
+          
+            <li class='article'>
+              <h4>
+                <a href='/customer/portal/articles/1542220-a-word-about-blackboard-integrations'>A Word about Blackboard Integrations</a>
+              </h4>
+              <p>Blackboard products play an important role in helping your institution communicate, engage, and create a bette...</p>
+              <div class='meta'>
+                May 08, 2014 04:22PM PDT
+              </div>
+            </li>
+          
+            <li class='article'>
+              <h4>
+                <a href='/customer/portal/articles/1542231-blackboard-eaccounts%E2%84%A2'>Blackboard eAccounts</a>
+              </h4>
+              <p>eAccounts by Blackboard Transact is a highly customizable and secure web-based and mobile self-service portal ...</p>
+              <div class='meta'>
+                May 13, 2014 05:07PM PDT
+              </div>
+            </li>
+
+            <li class='article'>
+              <h4>
+                <a href='/customer/portal/articles/1542231-blackboard-eaccounts%E2%84%A2'>Blackboard Learn</a>
+              </h4>
+              <p>Learn by Blackboard is a highly customizable LMS ...</p>
+              <div class='meta'>
+                November 11, 2014 09:07AM PDT
+              </div>
+
+              <li class='article'>
+              <h4>
+                <a href='/customer/portal/articles/1542231-blackboard-eaccounts%E2%84%A2'>TransLoc</a>
+              </h4>
+              <p>TransLoc is a route transit self-service portal ...</p>
+              <div class='meta'>
+                October 22, 2014 11:53AM PDT
+              </div>
+            </li>
+            </li>
+            </ul>
+            
+    
+            </body>
+
+            <script type="text/javascript">
+            
+            //
+            var date2 = document.querySelectorAll('#support-main .article .meta');
+            //Above use #toggle instead of #support-main if things go haywire
+            var rightNow = new Date();
+            var twoWeeksPast = rightNow.setDate(rightNow.getDate()-14);
+            var today = Date.parse(rightNow);
+            //console.log(today);
+            //console.log(twoWeeksPast);
+            //below we get the original values in the .meta class filed
+            for (var i = 0; i < date2.length; i++){ 
+            console.log(date2[i].innerHTML);}
+            
+            var dateObject = Date.parse(date2[1].innerHTML);
+            //The above finds all the inner date html
+           
+           //below the values in the .meta class is converted to usable date values
+            var allDatesArray = [];
+            for (var t = 0; t < date2.length; t++){
+              var allDates = date2[t].innerHTML;
+              var mapObj = {
+                "PM":" PM",
+                "AM":" AM"
+              };
+              allDates = allDates.replace(/PM|AM/gi, function(matched){
+                return mapObj[matched]
+              });
+              allDatesArray.push(Date.parse(allDates));
+            }
+
+            // var list = document.querySelectorAll('li');
+            // for (var l = 0; l < list.length; l++){
+            //   list[l].style.background="url(http://helpdeskassets.s3.amazonaws.com/img/add.png) left 25px no-repeat";
+            // } //The above pulls in all li items nad changes the image associated.
+
+            //below the twoWeeksPast is compared to the date in the date array and if the value in the array is greater then, the new image for that list item is shown and font colored red.
+            for (var c = 0; c < allDatesArray.length; c++){
+              if (twoWeeksPast < allDatesArray[c])
+              { 
+                var list = document.querySelectorAll('li')[c];
+                var dateColor = date2[c];
+                
+                console.log(dateColor);
+                list.style.background = "url(http://helpdesk-mosaic.s3.amazonaws.com/images/list_document_new.png) left 20px no-repeat";
+                dateColor.style.color = "Red";
+               	//list[c].style.color = "Red";
+                }
+              }
+
+
+             
+             
+              //Below is the function for the pop up boxes.
+                function toggle_popUp(id) {
+                  var e = document.getElementById(id);
+                  if(e.style.display == 'block') 
+                      e.style.display = 'none';
+                  else
+                  e.style.display = 'block';
+                }
+                
+               
+            
+
+            </script>
+            
+</html>
+

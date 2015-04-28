@@ -1,0 +1,792 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+/* Helpdesk */
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: rgb(255,255,255);
+	overflow: auto;
+	font-family: 'Lato', sans-serif !important;
+	font-style: normal !important;
+	height: 100%;
+}
+
+
+#content-wrapper {
+	overflow: auto;
+	margin: 0px auto -295px auto; /* This needs to be the same as footer height */
+	padding: 0px;
+	min-height: 100%;
+}
+
+#content-wrapper:after {
+	content: '';
+	display: block;
+	height: 295px; /* Same as footer height */
+}
+
+.wrapper {
+	margin: 0px auto;
+	width: 95%;
+	max-width: 830px;
+}
+
+#header {
+	width:100%;
+	overflow: hidden;
+	background-color: rgb(243,243,243);
+}
+
+	#bb-logo {
+		height: 40px;
+		text-indent: -9999px;
+		margin: 30px auto;
+	}
+
+		#bb-logo a {
+			background: url(../img/blackboardmobile_logo.png) center center no-repeat;
+			display: block;
+			width: 144px;
+			height: 40px;
+		}
+/* Search bar section */
+	#search {
+		background: url(../img/search_bg.jpg) center center no-repeat;
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+		height: 450px;
+		width: 100%;
+		overflow: auto;
+	}
+
+	#search #searchbar {
+		overflow: auto;
+	}
+
+		#search input[type='text'] {
+			font-family: 'Lato', sans-serif;
+			display: block;
+			width: 97%;
+			overflow: auto;
+			margin: 0px auto;
+			height: 70px;
+			font-size: 30px;
+			font-style: italic;
+			color: rgb(60,60,60);
+			letter-spacing: -1px;
+			border-radius: 2px;
+			border: 1px solid;
+			border-color: rgba(0,0,0,.15);
+			font-weight: 700;
+			background: #fff url(../img/search_btn.jpg) center right 10px no-repeat;
+			box-shadow: none;
+			padding: 0px 5px;
+
+		}
+			input:focus {
+				outline: none;
+			}
+
+
+			::-webkit-input-placeholder{
+				font-style: italic;
+				font-weight: 700;
+				color: rgb(199,199,199);
+			}
+
+			:-moz-placeholder { /* Firefox 18- */
+				font-style: italic;
+				font-weight: 700;
+				color: rgb(199,199,199);
+			}
+
+			::-moz-placeholder {  /* Firefox 19+ */
+				font-style: italic;
+				font-weight: 700;
+				color: rgb(199,199,199);
+			}
+
+			:-ms-input-placeholder {  
+				font-style: italic;
+				font-weight: 700;
+				color: rgb(199,199,199);
+			}
+		
+		#resource-logo {
+			overflow: auto;
+			text-align: center;
+			height: 250px;
+			color: rgb(245,245,245);
+			font-weight: 700;
+			font-size: 38px;
+			padding-top: 50px;
+		}	
+			
+		#resource-logo p:before  {
+			content: "";
+			display: block;
+			height: 155px;
+			width: 155px;
+			background: url(../img/search_resource_logo.png) center center no-repeat;
+			margin: 10px auto;
+		}
+/* END Search bar section */
+
+	/* 3 circle links at the top */
+	#page_links {
+		overflow: visible;
+		margin: 20px auto;
+		text-align: center;
+	}
+		
+		#page_links a {
+			font-size: 20px;
+			font-weight: 700;
+			color: rgb(60,60,60);
+			display: inline-block;
+			text-decoration: none;
+			vertical-align: top;
+		}
+
+		#page_links a:before { 
+			content: '';
+			height: 200px; /* See media query below for size change */
+			width: 200px;
+			display: block;
+			background: #fff;
+			margin: 0px auto 10px auto;
+			border-radius: 50%;
+		}
+
+		#page_links #documentation {
+			float: left;
+		}
+
+			#page_links #documentation:before {
+				background: #fff url(../img/page_links_document.jpg) center center no-repeat;
+			}
+
+			#page_links #community:before {
+							background: #fff url(../img/page_links_community.jpg) center center no-repeat;
+						}	
+
+		#page_links  #howto {
+			float: right;
+		}
+			#page_links #howto:before {
+							background: #fff url(../img/page_links_howto.jpg) center center no-repeat;
+						}	
+
+	/* END 3 circle links at the top */
+	
+	/* Blue Announcement section */
+
+	 #announcement {
+		background-color: rgb(24,157,219);
+		width: 100%;
+		padding:20px 0px 20px 0px;
+		text-align: center;
+		text-decoration: none;
+
+	}
+
+		.notification {
+			color: rgb(255,255,255);
+			font-weight: 700;
+			font-size: 22px;
+			text-decoration: none;
+			text-align: center;
+		}
+
+			.notification:hover {
+				text-decoration: underline;
+			}
+
+		.view-more {
+			font-size: 15px;
+			font-weight: 700;
+			color: rgb(24,157,219);
+			display: block;
+			background-color: rgb(255,255,255);
+			padding: 8px 10px;
+			width: 90px;
+			margin: 15px auto 0px auto;
+			border-radius: 50px;
+			text-decoration: none;
+			}
+
+			.view-more:hover {
+				opacity: .9;
+			}
+	/* END Blue Announcement section */
+	
+	/* Main Icons */
+
+	#main-icons {
+		margin: 50px auto;
+	}
+
+	#main-icons ul {
+		margin: 0px auto !important;
+	}
+
+	#main-icons li {
+		display: inline-block;
+		font-size: 18px;
+		text-decoration: none;
+		color: rgb(60,60,60);
+		text-align: center;
+		width: 25%;
+		padding:0px 4%;
+		margin: 30px auto;
+		height: 150px;
+	}
+
+		#main-icons li a {
+			text-decoration: none;
+			color: rgb(60,60,60);
+			font-size: 18px;
+			font-weight: 700;
+			display: block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 100%;
+			padding:3px 0px;
+		}
+
+			#main-icons li a:before {
+				content: '';
+				height: 130px;
+				width: 130px;
+				display: block;
+				margin: 10px auto;
+				-webkit-background-size: cover;
+  				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				overflow: visible;
+			}
+
+						#mobile-basics:before {
+							background: url(../img/main_icon_mobile_basics.png);
+						}
+						#using-learn:before {
+							background: url(../img/main_icon_ml.png);
+						}
+						#personal-license:before {
+							background: url(../img/main_icon_personal_license.png);
+						}
+						#dropbox:before {
+							background: url(../img/main_icon_dropbox.png);
+						}
+						#login-issues:before {
+							background: url(../img/main_icon_login_issues.png);
+						}
+						#notifications:before {
+							background: url(../img/main_icon_notifications.png);
+						}
+						#mobile-tests:before {
+							background: url(../img/main_icon_tests.png);
+						}
+						#instructors:before {
+							background: url(../img/main_icon_staff.png);
+						}
+						#known-issues:before {
+							background: url(../img/main_icon_known_issues.png);
+						}
+						#purchasing:before {
+							background: url(../img/main_icon_purchasing.png);
+						}
+
+	/* END Main Icons */
+	
+	/* Single Article Styles */
+
+		#breadcrumbs {
+			padding: 20px 0px;
+		}
+
+		#breadcrumbs a {
+			margin-right: 10px;
+			text-decoration: none;
+		}
+
+		article {
+			padding: 40px 0px;
+		}
+
+			.title, h3 {
+				font-size: 30px;
+				font-weight: 700;
+				color: rgb(60,60,60);
+			}
+
+			.meta {
+				font-size: 13px;
+				font-style: italic;
+				font-weight: 500;
+				margin: 10px auto;
+				color: rgb(60,60,60);
+			}
+
+			.article-content {
+				font-size: 15px;
+				line-height: 1.35em;
+				color: rgb(153,153,153);
+			}
+
+			.article-content a {
+				text-decoration: none;
+				color: rgb(24,157,219);
+			}
+
+			#rate_article {
+				margin-top: 25px;
+			}
+
+			#rate_article div {
+				margin:15px auto;
+			}
+
+				#rate_article a {
+					display: inline-block;
+					height: 18px;
+					width: 15px;
+					background: url(../img/thumbs_up.png) center center no-repeat;
+				}
+
+				#rate_article .rate-link-down a {
+			    	-moz-transform:rotate(180deg);
+	    			-webkit-transform:rotate(180deg);
+	    			vertical-align: bottom;
+				} 
+
+	/* END Single Article Styles */
+		
+	/* Search Results */
+
+		#toggle h3 {
+			margin: 0px auto;
+			width: 100%;
+			text-align: center;
+		}
+		
+		#toggle div {
+			margin: 40px auto;
+			text-align: center;
+			width: 100%;
+
+		}
+
+		#toggle a {
+			display: inline-block;
+			margin: 5px;
+			padding: 5px 20px;
+			border-radius: 15px;
+			font-weight: 700;
+			text-decoration: none;
+			color: rgb(255,255,255);
+			background-color: rgb(24,157,219);
+		}
+		
+
+		ul h4 {
+			margin-bottom: 8px;
+		}
+
+		ul h4 a {
+			font-weight: 700;
+			font-size: 23px;
+			color: rgb(24,157,219);
+			text-decoration: none;
+		}
+
+		ul .article {
+			border-bottom: 1px solid #dcdcdc;
+			padding: 20px 0px;
+		}
+
+		ul  .article {
+			background: url(../img/list_document.png) left 20px no-repeat;
+			padding-left: 35px;
+		}
+
+		ul .article p {
+			color: rgb(163,163,163);
+			line-height: 1.35em;
+		}
+
+	/* END Search Results */
+	
+	/* Ask us a Question */
+	
+	#question {
+		width: 95%;
+		display: block;
+		margin: 0px auto;
+	}
+	
+	#question input[type='text'], select, textarea, .file_upload {
+		font-family: 'Lato', sans-serif !important;
+		margin: 10px 0px;
+		font-size: 30px;
+		border: 1px solid;
+		border-color: rgb(0,0,0,.15);
+		height: 50px;
+		border-radius: 2px;
+		-moz-border-radius: 2px;
+		padding-left: 5px;
+		width: 97%;
+
+	}
+
+	#question input[type='text'] {
+		border-radius: 2px;
+		border-color: rgba(0,0,0,.15);
+	}
+
+	#question select {
+		font-family: 'Lato', sans-serif !important;
+		font-weight: 700;
+		font-style: italic; 
+		color: rgb(199,199,199);
+		-webkit-appearance: none;
+		-moz-appearance: none !important;
+		-moz-user-select: none;
+		width: 200px;
+		display: block;
+		margin: 10px 0px;
+		outline: none;
+		background: url(../img/dropdown.png) 95% center no-repeat;
+	}
+
+	#question textarea {
+		resize: none;
+		width: 97%;
+		min-height: 200px;
+		padding: 5px 5px;
+		border: 1px solid;
+		border-color: rgba(0,0,0,.15);
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		outline: none;
+	}
+
+	.file_upload {
+		display: inline-block;
+		font-family: 'Lato', sans-serif !important;
+		font-weight: 700;
+		font-style: italic;
+		background: url(../img/add.png) 95% center no-repeat;
+		color: rgb(190,190,190); 
+		width: 200px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+		height: 50px;
+		padding: 10px auto;
+	}
+
+	.file_upload span {
+		display: inline-block;
+		height: 50px !important;
+		margin: 10px auto;
+	}
+
+	.file_upload input {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		width: 200px;
+		height: 50px;
+		cursor: pointer;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+
+	#email_submit {
+		width: 100%;
+		height: 70px;
+		border: 1px solid;
+		background-color: rgb(24,157,219);
+		font-family: 'Lato', sans-serif !important;
+		font-weight: 700;
+		font-style: italic;
+		font-size: 30px;
+		text-align: center;
+		color: rgb(255,255,255);
+		margin: 20px auto;
+		cursor: pointer;
+		display: block;
+	}
+
+	/* END Ask us a Question */
+
+
+/* Footer */
+	
+	footer {
+		height: 255px; /* This needs to be the same as #content-wrapper margin */
+		background-color: rgb(60,60,60);
+		display: block;
+		width: 100%;
+		padding: 20px 0px;
+	}
+
+		#ask {
+			display: block;
+			font-size: 35px;
+			font-weight: 700;
+			text-decoration: none;
+			color: rgb(255,255,255);
+			width: 390px;
+			padding:15px 0px;
+			border-radius: 4px;
+			background-color: rgb(147,147,147);
+			margin: 35px auto;
+			text-align: center;
+		}
+
+			#ask:hover {
+				background-color: rgb(200,200,200);
+			}
+
+		#twitter {
+			display: block;
+			width: 380px;
+			font-size: 17px;
+			font-style: italic;
+			text-decoration: none;
+			color:rgb(255,255,255);
+			text-align: center;
+			margin: 30px auto 50px auto;
+			text-align: center;
+		}
+
+			 #twitter:before {
+			 	content: '';
+				display: inline-block;
+				background: url(../img/twitter_icon.png) center center no-repeat;
+				height: 24px;
+				width: 30px;
+				margin: 0px 5px 0px 0px;
+			}
+
+			footer p {
+				display: block;
+				color: rgb(89,89,89);
+				font-style: italic;
+				margin: 0px auto;
+				text-align: center;
+			}
+/* END Footer */
+
+/* MEDIA QUERIES FOR DESKTOP PERCENTAGES */
+
+@media only screen and (max-width: 650px) {
+	#page_links a {
+		font-size: 14px;
+	}
+
+	#page_links a:before {
+		height: 140px;
+		width: 140px;
+	} 
+
+	#main-icons li {
+		display: inline-block;
+		text-decoration: none;
+		color: rgb(60,60,60);
+		text-align: center;
+		width: 25%;
+		padding:0px 3%;
+		margin: 30px auto;
+	}
+
+	#main-icons li a {
+		font-size: 15px;
+	}
+
+	#main-icons li a:before {
+		content: '';
+		height: 100px;
+		width: 100px;
+		display: block;
+		margin: 10px auto;
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		overflow: visible;
+	}
+
+}
+/* RETINA & HDPI screens ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  
+		#bb-logo a {
+			background: url(../img/blackboardmobile_logo@2x.png) center center no-repeat;
+			background-size: 100%;
+			display: block;
+			width: 144px;
+			height: 40px;
+		}
+
+		#resource-logo p:before  {
+			content: "";
+			display: block;
+			height: 155px;
+			width: 155px;
+			background: url(../img/search_resource_logo@2x.png) center center no-repeat;
+			background-size: 100%;
+			margin: 10px auto;
+		}
+
+		#search input[type='text'] {
+			background: #fff url(../img/search_btn@2x.jpg) center right 10px no-repeat;
+			background-size: 30px;
+
+		}
+
+		#twitter:before {
+			background: url(../img/twitter_icon@2x.png) center center no-repeat;
+			background-size: 100%;
+			height: 24px;
+			width: 30px;
+		}
+
+		#page_links #documentation:before {
+						background: #fff url(../img/page_links_document@2x.jpg) center center no-repeat;
+						background-size: 55%;
+					}
+		
+		#page_links #community:before {
+						background: #fff url(../img/page_links_community@2x.jpg) center center no-repeat;
+						background-size: 55%;
+					}
+		
+		#page_links #howto:before {
+						background: #fff url(../img/page_links_howto@2x.jpg) center center no-repeat;
+						background-size: 55%;
+					}
+
+		#mobile-basics:before {
+			background: url(../img/main_icon_mobile_basics@2x.png);
+		}
+		#using-learn:before {
+			background: url(../img/main_icon_ml@2x.png);
+		}
+		#personal-license:before {
+			background: url(../img/main_icon_personal_license@2x.png);
+		}
+		#dropbox:before {
+			background: url(../img/main_icon_dropbox@2x.png);
+		}
+		#login-issues:before {
+			background: url(../img/main_icon_login_issues@2x.png);
+		}
+		#notifications:before {
+			background: url(../img/main_icon_notifications@2x.png);
+		}
+		#mobile-tests:before {
+			background: url(../img/main_icon_tests@2x.png);
+		}
+		#instructors:before {
+			background: url(../img/main_icon_staff@2x.png);
+		}
+		#known-issues:before {
+			background: url(../img/main_icon_known_issues@2x.png);
+		}
+		#purchasing:before {
+			background: url(../img/main_icon_purchasing@2x.png);
+			}
+
+		#rate_article a {
+			background: url(../img/thumbs_up@2x.png) center center no-repeat;
+			background-size: 100%;
+		}
+		
+		ul  .article {
+			background: url(../img/list_document@2x.png) left 20px no-repeat;
+			background-size: 21px 26px;
+		}
+
+		#question select {
+			background: url(../img/dropdown@2x.png) 95% center no-repeat;
+			background-size: 22px 18px;
+		}
+
+		.file_upload {
+			background: url(../img/add@2x.png) 95% center no-repeat;
+			background-size: 23px 23px;
+
+		}
+}

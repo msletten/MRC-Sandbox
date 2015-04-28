@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="master.css">
+</head>
+<body>
+<div id='support-main'>
+  <div class='support-body'>
+    <div class='content articles wrapper search-wrapper'>
+      <h3>22 results found for "What does"</h3>
+      <ul id='search-results'>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542259-what-does-library-do-'>What does Library do?</a>
+            </h4>
+            <p>So you want to know what Library can do - watch the video below to find out.</p>
+            <div class='meta'>
+              
+                May 06, 2014 05:14PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542258-what-does-athletics-do-'>What does Athletics do?</a>
+            </h4>
+            <p>So you want to know what Athletics can do - watch the video below to find out.</p>
+            <div class='meta'>
+              
+                January 06, 2014 05:13PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542257-what-does-courses-do-'>What does Courses do?</a>
+            </h4>
+            <p>So you want to know what Courses can do - watch the video below to find out!</p>
+            <div class='meta'>
+              
+                September 06, 2014 05:13PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542255-what-does-news-do-'>What does News do?</a>
+            </h4>
+            <p>So you want to know what News can do - watch the video below to find out.</p>
+            <div class='meta'>
+              
+                Nov 06, 2014 05:12PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542253-what-does-videos-do-'>What does Videos do?</a>
+            </h4>
+            <p>So you want to know what Videos can do - watch the video below to find out.</p>
+            <div class='meta'>
+              
+                May 06, 2014 05:12PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542245-what-does-photos-do-'>What does Photos do?</a>
+            </h4>
+            <p>So you want to know what Photos can do - watch the video below to find out.</p>
+            <div class='meta'>
+              
+                Oct 28, 2014 11:55AM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542241-what-does-directory-do-'>What does Directory do?</a>
+            </h4>
+            <p>So you want to know what Directory can do - watch the video below to find out.
+​</p>
+            <div class='meta'>
+              
+                May 06, 2014 05:08PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542256-what-does-events-do-'>What does Events do?</a>
+            </h4>
+            <p>So you want to know what Events can do - watch the video below to find out!</p>
+            <div class='meta'>
+              
+                Oct 21, 2014 03:10PM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542263-what-does-maps-do-'>What does Maps do?</a>
+            </h4>
+            <p>So you want to know what Maps can do - Watch the video below to find out.
+
+Note: Augmented Reality (AR) is a f...</p>
+            <div class='meta'>
+              
+                Jan 25, 2014 11:38AM PDT
+              
+            </div>
+          </li>
+        
+          <li class='article'>
+            <h4>
+              <a href='/customer/portal/articles/1542285-how-long-does-it-take-for-my-new-data-to-appear-in-the-app-'>How long does it take for my new data to appear in the App?</a>
+            </h4>
+            <p>When you add new data to test or change the existing Data, those changes will generally show up quickly (withi...</p>
+            <div class='meta'>
+              
+                May 06, 2014 05:23PM PDT
+              
+            </div>
+          </li>
+        
+        
+      </ul>
+</body>
+            <script type="text/javascript">
+            
+            var searchDate = document.querySelectorAll('#search-results .article .meta');
+            var rightNow = new Date();
+            var twoWeeksPast = rightNow.setDate(rightNow.getDate()-14);
+            var today = Date.parse(rightNow);
+            //console.log(today);
+            //console.log(twoWeeksPast);
+            //below we get the original values in the .meta class filed
+            // for (var i = 0; i < date2.length; i++){ 
+            // console.log(date2[i].innerHTML);}
+            
+            // var dateObject = Date.parse(date2[1].innerHTML);
+            //The above finds all the inner date html
+           
+           //below the values in the .meta class is converted to usable date values
+            var allDatesArray = [];
+            for (var t = 0; t < searchDate.length; t++){
+              var allDates = searchDate[t].innerHTML;
+              var mapObj = {
+                "PM":" PM",
+                "AM":" AM"
+              };
+              allDates = allDates.replace(/PM|AM/gi, function(matched){
+                return mapObj[matched]
+              });
+              allDatesArray.push(Date.parse(allDates));
+            }
+
+            // var list = document.querySelectorAll('li');
+            // for (var l = 0; l < list.length; l++){
+            //   list[l].style.background="url(http://helpdeskassets.s3.amazonaws.com/img/add.png) left 25px no-repeat";
+            // } //The above pulls in all li items nad changes the image associated.
+
+            //below the twoWeeksPast is compared to the date in the date array and if the value in the array is greater then, the new image for that list item is shown and font colored red.
+            for (var c = 0; c < allDatesArray.length; c++){
+              if (twoWeeksPast < allDatesArray[c])
+              { 
+                var list = document.querySelectorAll('li')[c];
+                var dateColor = searchDate[c];
+                console.log(list);
+                list.style.background = "url(http://helpdesk-mosaic.s3.amazonaws.com/images/list_document_new.png) left 25px no-repeat";
+                dateColor.style.color = "#ca2e2e";
+                //list[c].style.color = "Red";
+                }
+              }
+
+            
+            
+            
+
+            </script>
+</html>

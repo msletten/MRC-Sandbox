@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="master.css">	
+</head>
+
+<body>
+<div id='support-main' class='wrapper'>
+
+    <div id="registration-in-progress">
+        <img alt='Ajax-loader-small' src='https://d218iqt4mo6adh.cloudfront.net/images/ajax-loader-small.gif' />
+        Fetching your cases, please wait.
+    </div>
+  <div class='myportal' id="mycases">
+    <div class='mycases-filters' style="width: 99%;">
+      <div class='a-selectbox' style="margin-bottom: 5px; margin-left: 1%;">
+            <select id="a-cases-filter" style="margin: 0px 0px 0px 0px; height: 19px; width: inherit;">
+              <option value="my">Show My Tickets</option>
+              
+              <option value="company" selected="selected">Show All Tickets</option>
+              
+              <option value="7">Show Last 7 Days</option>
+              <option value="30">Show Last 30 Days</option>
+            </select>
+          </div>
+          <div class='a-checkbox'>
+        <input id="a-active-only" type="checkbox">Active Only</input>
+      </div>
+      <a href='/customer/portal/emails/new' class='myportal-button'>Create a New Case</a>
+    </div>
+    <table class='mycases' style="width:99%; clear:both;">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Case ID</th>
+          <th>Subject</th>
+          <th>From</th>
+          <th>Updated</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class='a-casechannel'><img src='https://d218iqt4mo6adh.cloudfront.net/assets/interactions/20/a-email-df47ca0058e12e534b428bb5e2ea5680.png'/></td>
+          <td class='a-caseid'>1256</td>
+          <td class='a-casesubject'><a href="/customer/en/portal/private/cases/1256">Fwd: Urgent - Mosaic not updating via RSS feed</a></td>
+          <td class='a-casefrom'>Michael</td>
+          <td class='a-casecreated'>Oct 20</td>
+          <td class='a-casestatus'>
+              New
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class='a-casechannel'><img src='https://d218iqt4mo6adh.cloudfront.net/assets/interactions/20/a-email-df47ca0058e12e534b428bb5e2ea5680.png'/></td>
+          <td class='a-caseid'>1144</td>
+          <td class='a-casesubject'><a href="/customer/en/portal/private/cases/1144">MC clients transtion to Mosaic</a></td>
+          <td class='a-casefrom'>Armen</td>
+          <td class='a-casecreated'>Oct 02</td>
+          <td class='a-casestatus'>
+              Open
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class='a-casechannel'><img src='https://d218iqt4mo6adh.cloudfront.net/assets/interactions/20/a-email-df47ca0058e12e534b428bb5e2ea5680.png'/></td>
+          <td class='a-caseid'>811</td>
+          <td class='a-casesubject'><a href="/customer/en/portal/private/cases/811">Testing Email Replies</a></td>
+          <td class='a-casefrom'>Christina</td>
+          <td class='a-casecreated'>Aug 21</td>
+          <td class='a-casestatus'>
+              Pending
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class='a-casechannel'><img src='https://d218iqt4mo6adh.cloudfront.net/assets/interactions/20/a-email-df47ca0058e12e534b428bb5e2ea5680.png'/></td>
+          <td class='a-caseid'>721</td>
+          <td class='a-casesubject'><a href="/customer/en/portal/private/cases/721">Test only Notes</a></td>
+          <td class='a-casefrom'>Alex</td>
+          <td class='a-casecreated'>Aug 27</td>
+          <td class='a-casestatus'>
+              Resolved
+            
+          </td>
+        </tr>
+        <tr>
+          <td class='a-casechannel'><img src='https://d218iqt4mo6adh.cloudfront.net/assets/interactions/20/a-email-df47ca0058e12e534b428bb5e2ea5680.png'/></td>
+          <td class='a-caseid'>634</td>
+          <td class='a-casesubject'><a href="/customer/en/portal/private/cases/634">TEST - IGNORE</a></td>
+          <td class='a-casefrom'>Alex</td>
+          <td class='a-casecreated'>Aug 27</td>
+          <td class='a-casestatus'>
+              Closed
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <div id='pagination'>
+      
+
+    </div>
+  </div>
+</div>
+ </body>
+ <!-- This hides the search on resize -->
+  <script type="text/javascript">
+  		
+        var statusColor = document.querySelectorAll('#support-main .a-casestatus');
+        var badgeArray = [];    
+          for (var b = 0; b < statusColor.length; b++){
+            var colorBadge = statusColor[b].innerHTML;
+            var badgeStrings = String(colorBadge).trim();
+            badgeArray.push(badgeStrings);
+              var newBadges = statusColor[b];
+              newBadges.style.borderRadius = "10px";
+              
+
+              newBadges.style.color = "#ffffff";
+              newBadges.style.padding = "1px 1px 4px 1px";
+              //newBadges.style.margin = "20px";
+              //newBadges.style.height = "15px";
+              newBadges.style.fontWeight = "bold";
+              newBadges.style.width = "70px";
+              newBadges.style.height = "12px";
+              newBadges.style.marginTop = "12px";              
+              newBadges.style.display = "inline-block";
+              //newBadges.style.borderCollapse = "separate";
+              
+
+              //newBadges.style.borderWidth = "thick";
+              //newBadges.style.backgroundPosition = "center center";
+              
+              //newBadges.style.marginBottom = "20px";
+              
+              switch (badgeArray[b])
+              {
+                case "Open": newBadges.style.backgroundColor = "#61A00F";
+                newBadges.style.border = "#4A7B0B 1px solid";
+                break;
+                case "Closed": newBadges.style.backgroundColor = "#D94242";
+                newBadges.style.border = "#AA6E14 1px solid";
+                break;
+                case "New": newBadges.style.backgroundColor = "#5B75AF";
+                newBadges.style.border = "#465A86 1px solid";
+                break;
+                case "Pending": newBadges.style.backgroundColor = "#DE901B";
+                newBadges.style.border = "#AA6E14 1px solid";
+                break;
+                case "Resolved": newBadges.style.backgroundColor = "#A5A5A5";
+                newBadges.style.border = "#7E7E7E 1px solid";
+                break;
+              }
+            //console.log(badgeArray[i]);
+           }
+
+           //This below uses a for loop and iff statements to run through the status items and style them.
+           // for (var c = 0; c < badgeArray.length; c++){
+           //  var badges = statusColor[c];
+           //  badges.style.borderRadius = "4px";
+           //  badges.style.color = "#ffffff";
+           //  badges.style.padding = "2px 8px";
+           //  badges.style.fontWeight = "bold";
+           //  badges.style.width = "60px";
+           //  if (badgeArray[c] == "Open")
+           //  {
+           //      badges.style.backgroundColor = "#61A00F";
+           //      badges.style.border = "#4A7B0B 1px solid";
+           //    }
+           //    if (badgeArray[c] == "Closed")
+           //    {
+           //      badges.style.backgroundColor = "#D94242";
+           //      badges.style.border = "#AA6E14 1px solid";
+           //    }
+           //    if (badgeArray[c] == "New")
+           //    {
+           //      badges.style.backgroundColor = "#5B75AF";
+           //      badges.style.border = "#465A86 1px solid";
+           //    }
+           //    if (badgeArray[c] == "Pending")
+           //    {
+           //      badges.style.backgroundColor = "#DE901B";
+           //      badges.style.border = "#AA6E14 1px solid";
+           //    }
+           //    if (badgeArray[c] == "Resolved")
+           //    {
+           //      badges.style.backgroundColor = "#A5A5A5";
+           //      badges.style.border = "#7E7E7E 1px solid";  
+           //    }
+           //  }
+            
+           //This uses a swtich statement and cases to style the elements. Matching a case agains the incoming string from the array. I combined this below so it's a single for statment with a switch.
+            // for (var t = 0; t < badgeArray.length; t++) {
+            //   var newBadges = statusColor[t];
+            //   newBadges.style.borderRadius = "4px";
+            //   newBadges.style.color = "#ffffff";
+            //   newBadges.style.padding = "2px 8px";
+            //   newBadges.style.fontWeight = "bold";
+            //   newBadges.style.width = "60px";
+            //   switch (badgeArray[t])
+            //   {
+            //     case "Open": newBadges.style.backgroundColor = "#61A00F";
+            //     newBadges.style.border = "#4A7B0B 1px solid";
+            //     break;
+            //     case "Closed": newBadges.style.backgroundColor = "#D94242";
+            //     newBadges.style.border = "#AA6E14 1px solid";
+            //     break;
+            //     case "New": newBadges.style.backgroundColor = "#5B75AF";
+            //     newBadges.style.border = "#465A86 1px solid";
+            //     break;
+            //     case "Pending": newBadges.style.backgroundColor = "#DE901B";
+            //     newBadges.style.border = "#AA6E14 1px solid";
+            //     break;
+            //     case "Resolved": newBadges.style.backgroundColor = "#A5A5A5";
+            //     newBadges.style.border = "#7E7E7E 1px solid";
+            //     break;
+            //   }
+            // }
+            
+            
+
+</script>
+
+</html>

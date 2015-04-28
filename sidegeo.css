@@ -1,0 +1,18 @@
+div#sideBarMenu {float: left; display: inline;}
+.sideBarMenulist {list-style-type: none; margin-left: -20px;}
+div#sideBarMenu ul li {margin-top: 2px; margin-bottom: 2px; width: 180px;}
+div#sideBarMenu li a {text-decoration: none; color:#189DDB; display: block; padding-left: 5px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px;}
+div#sideBarMenu li a:visited {text-decoration: none;}
+div#sideBarMenu li a:hover {color: white; background-color: #189DDB; text-decoration: none;}
+div#sideBarMenu img {background-color: white; border: 1px solid white; margin-right: 5px; vertical-align: -6px;}
+
+.sideBarTable {border:none; width: 180px; margin-left: 35px; border-collapse: collapse;}
+td {height: 20px;}
+td a {display:block; text-decoration: none; color:#189DDB; padding-left: 5px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px;}
+td a:visited {text-decoration: none;}
+td a:hover {color: white; background-color: #189DDB; text-decoration: none;}
+
+
+
+
+/*img {background-color: white; border: 1px solid white; margin-right: 5px; vertical-align: -6px;}*/
